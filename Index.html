@@ -1,124 +1,93 @@
-ZipFile
-
-# Create folder
-site_folder = "/mnt/data/gather_and_glow_site"
-os.makedirs(site_folder, exist_ok=True)
-
-# index.html content
-index_html = """<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gather & Glow | Sip & Seed Storytime</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-<h1>Gather & Glow</h1>
-<p class="tagline">Sip & Seed Storytime</p>
-</header>
-
-<section class="intro">
-<h2>Welcome to Our Community Storytime</h2>
-<p>Gather & Glow is a safe and nurturing space where children and families come together to enjoy stories, connection, and creativity. Our <strong>Sip & Seed Storytime</strong> brings books, joy, and community to life.</p>
-</section>
-
-<section class="donate">
-<h2>Support Our Vision</h2>
-<p>Your support helps us provide books, toys, and healthy snacks for future events. You can help in two ways:</p>
-<ul>
-<li><strong>Donate Items:</strong> Children’s books, educational toys, art supplies</li>
-<li><strong>Financial Support:</strong> CashApp <span class="highlight">$bellatrix934</span></li>
-</ul>
-<p>Every contribution goes directly into making storytime magical for our children.</p>
-</section>
-
-<section class="event">
-<h2>Upcoming Event</h2>
-<p><strong>Date:</strong> To Be Announced</p>
-<p><strong>Location:</strong> Local community & library spaces</p>
-<p>Join us for storytime, connection, and fun!</p>
-</section>
-
-<footer>
-<p>Contact: <a href="mailto:crystalalvarezrbt@gmail.com">crystalalvarezrbt@gmail.com</a> | 📞 909-638-8190</p>
-<p>&copy; 2025 Gather & Glow. All rights reserved.</p>
-</footer>
-</body>
-</html>
-"""
-
-# style.css content
-style_css = """body {
-font-family: 'Arial', sans-serif;
+<style>
+body {
+font-family: Arial, sans-serif;
 margin: 0;
 padding: 0;
-line-height: 1.6;
-background: #fffaf5;
+background: #fffaf2;
 color: #333;
+line-height: 1.6;
 }
 header {
-background: #f9d89c;
-color: #333;
-padding: 2rem;
+background: #f9c74f;
+padding: 20px;
 text-align: center;
 }
 header h1 {
 margin: 0;
-font-size: 2.5rem;
+font-size: 2rem;
+color: #333;
 }
-header .tagline {
+header p {
 font-size: 1.2rem;
-font-style: italic;
+margin-top: 5px;
+color: #555;
 }
-section {
-padding: 2rem;
-margin: 1rem auto;
+main {
+padding: 20px;
 max-width: 800px;
+margin: auto;
+}
+.section {
+margin-bottom: 30px;
 }
 h2 {
-color: #a95c68;
+color: #f9844a;
 }
-ul {
-list-style: none;
-padding: 0;
-}
-ul li {
-margin-bottom: 0.5rem;
-}
-.highlight {
-color: #e85d75;
+.donate {
+background: #90be6d;
+padding: 15px;
+border-radius: 8px;
+text-align: center;
+color: white;
 font-weight: bold;
 }
-footer {
-text-align: center;
-padding: 1rem;
-background: #f2f2f2;
-font-size: 0.9rem;
-margin-top: 2rem;
+.donate a {
+color: white;
+text-decoration: underline;
 }
-"""
+footer {
+background: #f9c74f;
+text-align: center;
+padding: 15px;
+margin-top: 40px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Gather & Glow</h1>
+<p>Sip & Seed Storytime</p>
+</header>
 
-# script.js (placeholder for future interactivity)
-script_js = """// Placeholder for future scripts
-console.log("Gather & Glow site loaded");
-"""
+<main>
+<div class="section">
+<h2>Welcome!</h2>
+<p>Join us for <strong>Sip & Seed Storytime</strong>, a safe and fun space where children can enjoy stories, play, and community connection.</p>
+</div>
 
-# Save files
-with open(os.path.join(site_folder, "index.html"), "w") as f:
-f.write(index_html)
+<div class="section">
+<h2>Support Our Storytime</h2>
+<p>We are asking for donations of books, toys, and storytime materials to help make our gatherings more magical. If you’d like to support, you can donate items or contribute funds.</p>
+<div class="donate">
+📚 Donate via CashApp: <strong>$bellatrix934</strong>
+</div>
+</div>
 
-with open(os.path.join(site_folder, "style.css"), "w") as f:
-f.write(style_css)
+<div class="section">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:crystalalvarezrbt@gmail.com">crystalalvarezrbt@gmail.com</a></p>
+<p>Phone: 909-638-8190</p>
+</div>
+</main>
 
-with open(os.path.join(site_folder, "script.js"), "w") as f:
-f.write(script_js)
-
-# Create ZIP for download
-zip_path = "/mnt/data/gather_and_glow_site.zip"
-with ZipFile(zip_path, "w") as zipf:
-for file in ["index.html", "style.css", "script.js"]:
-zipf.write(os.path.join(site_folder, file), file)
-
-zip_path
+<footer>
+<p>Gather & Glow © 2025 | Building safe spaces for children & families</p>
+</footer>
+</body>
+</html>
